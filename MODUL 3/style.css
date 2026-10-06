@@ -1,125 +1,1048 @@
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
-    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fffaf5;
+    color: #1c1917;
     line-height: 1.6;
-    color: #243247;
-    background-color: #edf2f7;
 }
 
-.halaman {
-    width: min(100% - 2rem, 1000px);
-    margin: 1rem auto;
-    background: #ffffff;
-    border: 1px solid #d4deea;
+a {
+    text-decoration: none;
 }
+
+
+/* ==================================================
+   SKIP LINK
+================================================== */
+
+.lewati {
+    position: absolute;
+    left: -9999px;
+}
+
+.lewati:focus {
+    left: 20px;
+    top: 20px;
+    z-index: 9999;
+
+    background: white;
+    color: #ea580c;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
 
 .header {
-    padding: 2rem;
-    color: #ffffff;
-    background: #1b3c6b;
-    border-bottom: 5px solid #f7941d;
+    min-height: 760px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(249, 115, 22, 0.45),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(234, 88, 12, 0.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #171717,
+            #292524 55%,
+            #431407
+        );
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-h1 {
-    margin: 0 0 1rem;
-    font-size: 2rem;
-    line-height: 1.3;
-}
 
-h2,
-h3 {
-    margin-top: 0;
-    color: #1b3c6b;
-}
+/* ==================================================
+   NAVBAR
+================================================== */
 
-.identitas {
-    margin-top: 0;
-}
+.navbar {
+    width: 90%;
+    max-width: 1200px;
 
-.menu {
+    margin: auto;
+
+    padding: 25px 0;
+
     display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #fb923c;
+}
+
+.nav-menu {
+    display: flex;
+
+    gap: 35px;
+}
+
+.nav-menu a {
+    color: #e7e5e4;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: #fb923c;
+}
+
+.nav-button {
+    color: white;
+
+    border: 1px solid #fb923c;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: #f97316;
+
+    border-color: #f97316;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 80px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* HERO TEXT */
+
+.tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(251, 146, 60, .3);
+
+    background: rgba(249, 115, 22, .08);
+
+    border-radius: 30px;
+
+    color: #fed7aa;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+}
+
+.tag span {
+    width: 7px;
+    height: 7px;
+
+    background: #f97316;
+
+    border-radius: 50%;
+}
+
+.hero h1 {
+    margin-top: 25px;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: #f97316;
+
+    font-weight: 800;
+}
+
+.hero-content > p {
+    max-width: 580px;
+
+    margin-top: 25px;
+
+    color: #d6d3d1;
+
+    font-size: 17px;
+}
+
+
+/* HERO BUTTON */
+
+.hero-button {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
     flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    background: #eef3f8;
 }
 
-.menu a {
-    padding: 0.5rem 0.75rem;
-    color: #1b3c6b;
-    text-decoration: none;
-    border-radius: 0.25rem;
+.btn-primary {
+    background: #f97316;
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    transition: .3s;
 }
 
-.menu a:hover {
-    color: #ffffff;
-    background: #1b3c6b;
+.btn-primary span {
+    margin-left: 8px;
 }
 
-.menu a:focus-visible {
-    outline: 3px solid #1b3c6b;
-    outline-offset: 3px;
+.btn-primary:hover {
+    background: #ea580c;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(249, 115, 22, .25);
 }
+
+.btn-secondary {
+    padding: 13px 22px;
+
+    border: 1px solid #57534e;
+
+    border-radius: 9px;
+
+    color: #f5f5f4;
+
+    transition: .3s;
+}
+
+.btn-secondary:hover {
+    border-color: #fb923c;
+
+    color: #fb923c;
+}
+
+
+/* ==================================================
+   HERO VISUAL
+================================================== */
+
+.hero-visual {
+    height: 450px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 360px;
+    height: 360px;
+
+    border: 1px solid rgba(249, 115, 22, .25);
+}
+
+.circle-two {
+    width: 270px;
+    height: 270px;
+
+    background: rgba(249, 115, 22, .08);
+
+    border: 1px solid rgba(251, 146, 60, .2);
+}
+
+
+/* CAMPUS CARD */
+
+.campus-card {
+    width: 300px;
+
+    padding: 35px;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    border:
+        1px solid rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, .35);
+
+    text-align: center;
+}
+
+.campus-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(249, 115, 22, .15);
+
+    border-radius: 18px;
+
+    font-size: 38px;
+}
+
+.small-text {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #fb923c;
+}
+
+.campus-card h2 {
+    margin: 5px 0;
+
+    font-size: 38px;
+}
+
+.campus-card > p:not(.small-text) {
+    color: #d6d3d1;
+
+    font-size: 13px;
+}
+
+.card-line {
+    height: 1px;
+
+    background: rgba(255,255,255,.15);
+
+    margin: 25px 0;
+}
+
+.card-bottom {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #a8a29e;
+
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   MAIN
+================================================== */
 
 main {
-    padding: 1.5rem;
+    background: #fffaf5;
 }
 
-.panel + .panel {
-    margin-top: 2rem;
+
+/* ==================================================
+   PROFIL
+================================================== */
+
+.profil {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 0;
 }
 
-.kartu-grid {
+
+/* SECTION HEADING */
+
+.section-heading {
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading.center {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.section-label {
+    color: #ea580c;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    font-size: 43px;
+
+    line-height: 1.15;
+
+    color: #1c1917;
+}
+
+.section-heading h2 span {
+    color: #ea580c;
+}
+
+.section-heading > p {
+    margin-top: 18px;
+
+    color: #78716c;
+}
+
+
+/* PROFIL GRID */
+
+.profil-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
 }
 
-.kartu {
-    padding: 1rem;
-    border: 1px solid #cbd5e1;
-    background: #f8fafc;
+.profil-card {
+    position: relative;
+
+    padding: 35px;
+
+    min-height: 280px;
+
+    background: white;
+
+    border: 1px solid #e7e5e4;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: .35s;
 }
 
-.kartu:hover {
+.profil-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #fdba74;
+
+    box-shadow:
+        0 20px 45px rgba(234, 88, 12, .1);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #fff7ed;
+
+    border-radius: 14px;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+.profil-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.profil-card p {
+    color: #78716c;
+
+    font-size: 14px;
+}
+
+.card-number {
+    position: absolute;
+
+    right: 25px;
+    bottom: 15px;
+
+    color: #f5f5f4;
+
+    font-size: 65px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* ==================================================
+   HIGHLIGHT
+================================================== */
+
+.highlight {
+    padding: 55px 5%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c2410c,
+            #ea580c,
+            #f97316
+        );
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.highlight-item {
+    text-align: center;
+
+    border-right:
+        1px solid rgba(255,255,255,.25);
+}
+
+.highlight-item:last-child {
+    border-right: none;
+}
+
+.highlight-item strong {
+    display: block;
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.highlight-item p {
+    color: #ffedd5;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   LAYANAN
+================================================== */
+
+.layanan {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+.layanan-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* LAYANAN CARD */
+
+.layanan-card {
+    padding: 35px;
+
+    background: white;
+
+    border:
+        1px solid #e7e5e4;
+
+    border-radius: 18px;
+
+    transition: .35s;
+}
+
+.layanan-card:hover,
+.layanan-card.active {
+    transform: translateY(-8px);
+
+    border-color: #fb923c;
+
+    box-shadow:
+        0 20px 45px rgba(234, 88, 12, .1);
+}
+
+.layanan-card.active {
+    background:
+        linear-gradient(
+            145deg,
+            #fff7ed,
+            #ffffff
+        );
+}
+
+.layanan-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.layanan-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff7ed;
+
+    border-radius: 14px;
+
+    font-size: 28px;
+}
+
+.layanan-top > span {
+    color: #d6d3d1;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.layanan-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.layanan-card p {
+    color: #78716c;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.layanan-card a {
+    color: #ea580c;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.layanan-card a span {
+    margin-left: 5px;
+
+    transition: .3s;
+}
+
+.layanan-card a:hover span {
+    margin-left: 10px;
+}
+
+
+/* ==================================================
+   CTA
+================================================== */
+
+.cta {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 100px;
+
+    padding: 60px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1c1917,
+            #292524
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cta::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(249,115,22,.15);
+
+    right: -70px;
+    top: -100px;
+}
+
+.cta > div {
+    position: relative;
+
+    z-index: 2;
+}
+
+.cta span {
+    color: #fb923c;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.cta h2 {
+    margin-top: 10px;
+
+    font-size: 35px;
+
+    line-height: 1.2;
+}
+
+.cta > a {
+    position: relative;
+
+    z-index: 2;
+
+    background: #f97316;
+
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.cta > a:hover {
+    background: #ea580c;
+
     transform: translateY(-3px);
 }
 
+
+/* ==================================================
+   FOOTER
+================================================== */
+
 .footer {
-    padding: 1rem;
-    text-align: center;
-    background: #eef3f8;
+    padding: 45px 5%;
+
+    background: #0c0a09;
+
+    color: white;
 }
 
-.footer p {
-    margin: 0.25rem 0;
+.footer-content {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
 }
 
-/* Tampilan HP */
-@media (max-width: 600px) {
+.footer-brand h3 {
+    color: #f97316;
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+}
+
+.footer-brand p {
+    margin-top: 3px;
+
+    color: #a8a29e;
+
+    font-size: 13px;
+}
+
+.footer-info {
+    text-align: right;
+
+    color: #a8a29e;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        margin-top: 60px;
+    }
 
     .header {
-        padding: 1.25rem;
+        padding-bottom: 80px;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    .hero-visual {
+        height: 350px;
     }
 
-    main {
-        padding: 1rem;
+    .profil-grid,
+    .layanan-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .kartu-grid {
+    .highlight {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .highlight-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE HP
+================================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .hero {
+        margin-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+    }
+
+    .hero-visual {
+        height: 330px;
+    }
+
+    .circle-one {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-two {
+        width: 210px;
+        height: 210px;
+    }
+
+    .campus-card {
+        width: 260px;
+
+        padding: 28px;
+    }
+
+    .profil,
+    .layanan {
+        padding: 70px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .profil-grid,
+    .layanan-grid {
         grid-template-columns: 1fr;
     }
 
+    .highlight {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .highlight-item {
+        padding: 20px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.2);
+    }
+
+    .highlight-item:last-child {
+        border-bottom: none;
+    }
+
+    .cta {
+        padding: 40px 25px;
+
+        margin-bottom: 70px;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
 }
+
